@@ -1,19 +1,14 @@
 package in.lemonco.popularmovies;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.SystemClock;
+import android.database.Cursor;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.content.Intent;
-import android.database.Cursor;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,13 +21,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import in.lemonco.popularmovies.data.MovieContract;
 import in.lemonco.popularmovies.sync.MoviesSyncAdapter;
 
 /**
- * Fragment for Movies Screen
+ * MoviesFragment, Replaces container in MainActivity
  */
 public class MoviesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> ,SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int MOVIES_LOADER = 0;
@@ -199,6 +192,7 @@ public class MoviesFragment extends Fragment implements LoaderManager.LoaderCall
         mMovieAdapter.swapCursor(null);
     }
 
+    //Displays appropriate message in case of empty MovieAdapter
     public void updateEmptyView() {
         if (mMovieAdapter.getCount() == 0) {
             if (mEmptyTextView != null) {

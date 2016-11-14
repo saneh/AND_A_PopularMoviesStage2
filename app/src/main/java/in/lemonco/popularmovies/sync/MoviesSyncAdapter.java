@@ -58,18 +58,6 @@ public class MoviesSyncAdapter extends AbstractThreadedSyncAdapter {
     private static final String API_KEY = "api_key";
     public static final int SYNC_INTERVAL = 60*180;
     public static final int SYNC_FLEXTIME = SYNC_INTERVAL/3;
-    private static final int DAYS_IN_MILLIS = 24*60*60*1000;
-    private static final int WEATHER_NOTIFICATION_ID = 5004;
-
-
-    private static final String[] NOTIFY_MOVIE_PROJECTION = {MovieContract.MovieEntry.COLUMN_MOVIE_ID,
-            MovieContract.MovieEntry.COLUMN_TITLE,
-            MovieContract.MovieEntry.COLUMN_RELEASE_DATE,
-            MovieContract.MovieEntry.COLUMN_VOTE_AVERAGE};
-    private static final int INDEX_MOVIE_ID=0;
-    private static final int INDEX_TITLE =1;
-    private static final int INDEX_RELEASE_DATE=2;
-    private static final int INDEX_VOTE_AVERAGE=3;
 
     /**
      * Set up the sync adapter
@@ -107,6 +95,18 @@ public class MoviesSyncAdapter extends AbstractThreadedSyncAdapter {
         if (searchQuery == null|| searchQuery.equals("favorite")) {
             return;
         }
+        //Loading both "popular" and "top_rated" movies, to avoid empty data in intial case of prefrence change and improve performace by fetching data in one go
+        switch(1){
+            case 1:
+                fetchMovieData(getContext().getString(R.string.sort_order_popular));
+            case 2:
+                fetchMovieData(getContext().getString(R.string.sort_order_toprated));
+                break;
+        }
+        return;
+    }
+    //fetch movie data from database
+    private void fetchMovieData(String searchQuery){
         String moviesJsonStr = null;
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
@@ -177,8 +177,6 @@ public class MoviesSyncAdapter extends AbstractThreadedSyncAdapter {
                 }
             }
         }
-        Log.i("result", moviesJsonStr);
-        return;
     }
     //get movie data from JsonString
     private void getMovieData(String moviesJsonStr,String sortCriteria) throws JSONException {

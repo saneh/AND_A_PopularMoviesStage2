@@ -1,16 +1,9 @@
 package in.lemonco.popularmovies;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
+//MovieDetailActivity, replaces container with DetailFragment
 public class MovieDetailActivity extends AppCompatActivity {
 
     public static final String MOVIE_ID ="movie_id";

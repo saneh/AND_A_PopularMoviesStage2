@@ -14,7 +14,7 @@ import android.widget.ListView;
 import in.lemonco.popularmovies.sync.MoviesSyncAdapter;
 
 /**
- * Created by sanehyadav1 on 10/14/16.
+ * Utility class
  */
 public class Utility {
     public static String getSortCriteria(Context context){

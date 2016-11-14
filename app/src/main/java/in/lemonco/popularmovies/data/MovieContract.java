@@ -4,12 +4,9 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.text.format.Time;
-
-import java.net.URI;
 
 /**
- * Created by sanehyadav1 on 10/12/16.
+ * MovieContract: defines the database structure of "MovieEntry" and "FavoriteMovieEntry" for movies and favorite movie respectively
  */
 public class MovieContract {
    //CONTENT_AUTHORITY is the name for the entire content provider

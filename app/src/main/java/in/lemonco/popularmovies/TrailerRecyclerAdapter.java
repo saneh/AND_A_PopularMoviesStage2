@@ -20,7 +20,9 @@ import com.google.android.youtube.player.YouTubeThumbnailView;
 import java.util.ArrayList;
 
 /**
- * Created by sanehyadav1 on 10/16/16.
+ * RecyclerAdapter for RecyclerView. Displays youtube video preview , if the app is installed. Otherwise displays an empty cardView.
+ * on Clicking in case of no youtube app opens link in installed browser
+ * otherwise the trailer plays in youtube app
  */
 public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerRecyclerAdapter.VideoInfoHolder> {
 
@@ -56,7 +58,7 @@ public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerRecycler
             }
         };
 
-        holder.youTubeThumbnailView.initialize(Config.YOU_TUBE_API, new YouTubeThumbnailView.OnInitializedListener() {
+        holder.youTubeThumbnailView.initialize(BuildConfig.YOUTUBE_API_KEY, new YouTubeThumbnailView.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView, YouTubeThumbnailLoader youTubeThumbnailLoader) {
 
@@ -93,7 +95,7 @@ public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerRecycler
         @Override
         public void onClick(View v) {
 
-            Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity) ctx, Config.YOU_TUBE_API, VideoID.get(getLayoutPosition()));
+            Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity) ctx, BuildConfig.YOUTUBE_API_KEY, VideoID.get(getLayoutPosition()));
             //check if youtube app is installed or not
             String packagename = "com.google.android.youtube";
             boolean isYouTubeInstalled = isAppInstalled(packagename);

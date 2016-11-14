@@ -1,7 +1,7 @@
 package in.lemonco.popularmovies;
 
 /**
- * Created by sanehyadav1 on 10/17/16.
+ * Custom VerticalScrollView
  */
 import android.content.Context;
 import android.util.AttributeSet;

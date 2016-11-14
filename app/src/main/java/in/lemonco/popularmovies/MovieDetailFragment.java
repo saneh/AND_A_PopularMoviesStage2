@@ -1,29 +1,26 @@
 package in.lemonco.popularmovies;
 
-import android.app.ActionBar;
 import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.database.Cursor;
-import android.support.v4.app.Fragment;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -35,7 +32,7 @@ import java.util.ArrayList;
 import in.lemonco.popularmovies.data.MovieContract;
 
 /**
- * Created by sanehyadav1 on 8/18/16.
+ * MovieDetailFragment
  */
 public class MovieDetailFragment extends Fragment{
     public static final String MOVIE_ID = "movie_id";

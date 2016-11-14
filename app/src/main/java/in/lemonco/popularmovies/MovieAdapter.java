@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 import in.lemonco.popularmovies.data.MovieContract;
 
 /**
- * Created by sanehyadav1 on 10/14/16.
+ * Movie CursorAdapter
  */
 public class MovieAdapter extends CursorAdapter {
     public MovieAdapter(Context context,Cursor c, int flags){

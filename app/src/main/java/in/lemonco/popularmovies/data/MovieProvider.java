@@ -8,11 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
-import java.util.ArrayList;
-
 
 /**
- * Created by sanehyadav1 on 10/12/16.
+ * Content Provider for movies
  */
 public class MovieProvider extends ContentProvider {
 

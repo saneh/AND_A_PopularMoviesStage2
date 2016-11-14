@@ -1,10 +1,10 @@
 package in.lemonco.popularmovies;
 
-import android.support.v4.content.AsyncTaskLoader;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Created by sanehyadav1 on 10/16/16.
+ * AsyncTaskLoader for fetching trailer data
  */
 public class FetchMovieTrailersData extends AsyncTaskLoader<ArrayList<String>> {
     private static final String API_KEY = "api_key";
@@ -40,6 +40,9 @@ public class FetchMovieTrailersData extends AsyncTaskLoader<ArrayList<String>> {
 
     }
 
+    /*
+    * loadInBackground method for fetching youtube video ids , json string
+    */
     @Override
     public ArrayList<String> loadInBackground(){
         if (isNetworkConnected() == false) {
@@ -123,7 +126,7 @@ public class FetchMovieTrailersData extends AsyncTaskLoader<ArrayList<String>> {
         }
 
     }
-    //get review data from JsonString
+    //get trailer data ,youtube video ids, from JsonString
     private ArrayList<String> getTrailersData(String trailerJsonStr) throws JSONException {
         ArrayList<String> videos = new ArrayList<>();
         if (trailerJsonStr != null) {
@@ -139,7 +142,7 @@ public class FetchMovieTrailersData extends AsyncTaskLoader<ArrayList<String>> {
         }
         return videos;
     }
-
+    //check for network connectivity
     protected boolean isNetworkConnected() {
 
         // Instantiate mConnectivityManager if necessary

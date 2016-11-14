@@ -1,13 +1,11 @@
 package in.lemonco.popularmovies;
 
-import android.support.v4.content.AsyncTaskLoader;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
+import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -23,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Created by sanehyadav1 on 10/16/16.
+ * AsyncTaskLoader for fetching movie review data
  */
 public class FetchReviewData extends AsyncTaskLoader<ArrayList<String>> {
     private static final String API_KEY = "api_key";

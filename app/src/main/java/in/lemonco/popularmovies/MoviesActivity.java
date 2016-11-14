@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import in.lemonco.popularmovies.data.MovieContract;
 import in.lemonco.popularmovies.sync.MoviesSyncAdapter;
 
+//MoviesActivity
 public class MoviesActivity extends AppCompatActivity implements MoviesFragment.Callback {
     private static final String DETAILFRAGMENT_TAG = "DF_TAG";
     @NonNull
@@ -26,6 +26,7 @@ public class MoviesActivity extends AppCompatActivity implements MoviesFragment.
         this.setTitle(getMovieActivityTitle());
         getSupportActionBar().setElevation(0f);
 
+        //initialize SyncAdapter
         MoviesSyncAdapter.initializeSyncAdapter(this);
 
     }
