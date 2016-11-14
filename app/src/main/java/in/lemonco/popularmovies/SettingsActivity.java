@@ -13,6 +13,9 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.sort_order);
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sort_key)));
+        MoviesFragment.setPrefChange(false);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     private void bindPreferenceSummaryToValue(Preference pref){
@@ -27,10 +30,12 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         if(preference instanceof ListPreference){
             ListPreference listPreference = (ListPreference) preference;
             int prefIndex = listPreference.findIndexOfValue(stringValue);
-            if(prefIndex>0)
+            if(prefIndex>0){
                 preference.setSummary(listPreference.getEntries()[prefIndex]);
+            }
         }else
             preference.setSummary(stringValue);
+        MoviesFragment.setPrefChange(true);
 
         return true;
 

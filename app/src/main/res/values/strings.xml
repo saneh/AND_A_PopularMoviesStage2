@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">Popular Movies</string>
 
     <string name="action_settings">Settings</string>
@@ -10,18 +10,64 @@
     <string name="pref_sort_key">sort_order_key</string>
     <string name="sort_setting_title">Select Sort Criteria</string>
     <string name="sort_setting_detail">Sort By</string>
+
     <string name="sort_order_popular_label">Popularity</string>
     <string name="sort_order_toprated_label">Top rated</string>
+    <string name="sort_order_favorite_label">Favorites</string>
+
     <string name="sort_order_popular">popular</string>
     <string name="sort_order_toprated">top_rated</string>
+    <string name="sort_order_favorite">favorite</string>
+
     <array name="sort_order_labels">
         <item>@string/sort_order_popular_label</item>
         <item>@string/sort_order_toprated_label</item>
+        <item>@string/sort_order_favorite_label</item>
     </array>
     <array name="sort_order_values">
         <item>@string/sort_order_popular</item>
         <item>@string/sort_order_toprated</item>
+        <item>@string/sort_order_favorite</item>
     </array>
+
+    <string name="title_popular">Popular Movies</string>
+    <string name="title_top_rated">Top Rated Movies</string>
+    <string name="title_favourite">My Favourite Movies</string>
     <string name="sort_order_default">@string/sort_order_popular</string>
+    <string name="favorite_button">MARK AS FAVOURITE</string>
+    <string name="addfavorite">Added to your favorite list</string>
+
+    <string name="reviews">Read Reviews</string>
+    <string name="trailers">TRAILERS: </string>
+    <string name="release_date_text">Release Date:</string>
+    <string name="movie_rating_text">/10</string>
+
+    <string name="player_error">Error initializing YouTube player</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
+
+    <string name="error_msg_null_fav">You have not added any movie to your favorite list</string>
+    <string name="error_no_trailers">No Movie Trailers Available</string>
+    <string name="fav_movie_addition">Nice Choice!Added to your favorites</string>
+    <string name="fav_movie_deletion">Removed from your favorites</string>
+
+    <string name="sync_account_type">popularmovies.lemonco.in</string>
+    <string name="content_authority">in.lemonco.popularmovies</string>
+
+    <!-- Notification Format -->
+    <string name="format_notification">
+    Popular Movie: <xliff:g id="movie_name">%1$s</xliff:g> High: <xliff:g id="release_date">%2$s</xliff:g> Low: <xliff:g id="rating">%3$s</xliff:g>
+    </string>
+    <!-- Strings related to Notification preference -->
+    <string name="pref_last_notification">last_notification
+    </string>
+
+    <string name="empty_text">No movies information available</string>
+    <string name="connectionError"> Sorry, could not find movies information. Please check internet connection! </string>
+    <string name="server_down">Sorry , could not find movies information.Error accessing the movie db</string>
+    <string name="server_invalid">Sorry , could not find movies information.Invalid response received</string>
+    <string name="server_unknown">Sorry , could not find movies information. Server is taking a nap!Please try after some time</string>
+
+    <string name="pref_movie_status_key" translatable="false">movie_status</string>
 
 </resources>

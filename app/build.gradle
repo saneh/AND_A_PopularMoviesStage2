@@ -17,13 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each{
+        it.buildConfigField 'String','MOVIEDB_API_KEY',"\"512e894a0d6f28f974f402749948a814\""
+    }
     repositories{
         mavenCentral()
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:cardview-v7:24.0.0'
+    compile 'com.android.support:support-annotations:24.0.0'
 }

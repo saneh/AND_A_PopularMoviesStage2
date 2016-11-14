@@ -1,0 +1,80 @@
+<in.lemonco.popularmovies.VerticalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="in.lemonco.popularmovies.MovieDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/outer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/movie_backdrop"
+                style="@style/movie_backdrop_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ToggleButton
+                android:id="@+id/favorite_button"
+                android:layout_width="@dimen/toggle_button_height"
+                android:layout_height="@dimen/toggle_button_width"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="8dp"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/movie_title"
+            style="@style/movie_title_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp"/>
+        <TextView
+            android:id="@+id/release_date"
+            style="@style/secondary_text_style"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+
+        <TextView
+            android:id="@+id/movie_rating"
+            style="@style/secondary_text_style"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+
+        <TextView
+            android:id="@+id/movie_overview"
+            style="@style/secondary_text_style"
+            android:layout_margin="8dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/trailer_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/reviews"
+            android:text="@string/reviews"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttonshape"
+            />
+
+
+    </LinearLayout>
+
+
+</in.lemonco.popularmovies.VerticalScrollView>
+
+
+
